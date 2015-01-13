@@ -32,5 +32,14 @@
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>${slf4j.version}</version>
 		</dependency>
+		
+		<!--  Banco de Dados -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>9.3-1100-jdbc41</version>
+		</dependency>
+
 	</dependencies>
+
 </project>
