@@ -31,15 +31,10 @@ public class UsuarioDAO {
 		}
 	}
 
+	@Transactional
 	public void excluir(Usuario usuario) {
-		try {
-			em.getTransaction().begin();
-			em.remove(usuario);
-			em.getTransaction().commit();
-		} catch (Exception e) {
-			e.getStackTrace();
-			em.getTransaction().rollback();
-		}
+		usuario = buscarPorId(usuario.getId());
+		em.remove(usuario);
 	}
 
 	@SuppressWarnings("unchecked")
