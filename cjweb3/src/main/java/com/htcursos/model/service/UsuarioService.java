@@ -1,5 +1,7 @@
 package com.htcursos.model.service;
 
+import javax.inject.Inject;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +12,7 @@ import com.htcursos.model.entity.Usuario;
 @Service
 public class UsuarioService {
 	
-	@Autowired
+	@Inject
 	private UsuarioDAO usuarioDAO;
 	
 	public void salvar(Usuario usuario) throws ServiceException {
