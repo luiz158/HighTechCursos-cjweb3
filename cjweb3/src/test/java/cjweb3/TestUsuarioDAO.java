@@ -4,10 +4,11 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
@@ -23,15 +24,15 @@ import com.htcursos.model.entity.Usuario;
 @Transactional
 public class TestUsuarioDAO {
 	
-	@Autowired
+	@Inject
 	UsuarioDAO usuarioDAO;
 
 	@Test
 	public void testSalvar() throws DAOException {
 		Usuario usuario = new Usuario();
-		usuario.setNome("Teste");
-		usuario.setSenha("123");
-		usuario.setEmail("test@user.net");
+		usuario.setNome("Inject Test");
+		usuario.setSenha("432");
+		usuario.setEmail("inject.test@user.net");
 		
 		usuarioDAO.salvar(usuario);
 	}
