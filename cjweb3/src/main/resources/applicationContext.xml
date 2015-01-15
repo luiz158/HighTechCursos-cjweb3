@@ -9,6 +9,7 @@
        					   http://www.springframework.org/schema/context
        					   http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 
+	<!-- Escaneia as classes com @Service para carrega-las pelo Spring -->
 	<context:component-scan base-package="com.htcursos" />
 
 	<!--<bean id="usuarioDAO" class="com.htcursos.model.dao.UsuarioDAO" /> -->
@@ -37,8 +38,7 @@
 		</property>
 	</bean>
 
-	<bean
-		class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
+	<bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
 
 	<!-- Construção do Objeto de Gestão de transações Spring JPA -->
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
@@ -51,7 +51,7 @@
 		proxy-target-class="true" />
 
 	<!-- View scope - Integração do Spring com JSF -->
-	<bean>
+	<bean class="org.springframework.beans.factory.config.CustomScopeConfigurer">
 		<property name="scopes">
 			<map>
 				<entry key="view">
