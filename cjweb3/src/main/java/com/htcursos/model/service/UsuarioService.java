@@ -8,7 +8,7 @@ import com.htcursos.model.dao.DAOException;
 import com.htcursos.model.dao.UsuarioDAO;
 import com.htcursos.model.entity.Usuario;
 
-@Service
+@Service // Será carregado pelo Spring
 public class UsuarioService {
 	
 	@Inject
