@@ -17,7 +17,7 @@
 				<p:outputLabel value="Estado" />
 				<p:selectOneMenu value="#{usuarioBean.usuario.cidade.estado}"
 					converter="#{estadoConverter}"
-					valueChangeListener="#{cidadeBean.buscarCidades">
+					valueChangeListener="#{cidadeBean.buscarCidades}">
 					<f:selectItems value="#{estadoBean.estadoList}" var="est"
 						itemLabel="#{est.uf}" />
 				</p:selectOneMenu>
