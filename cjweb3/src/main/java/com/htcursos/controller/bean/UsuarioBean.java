@@ -27,7 +27,7 @@ public class UsuarioBean {
 	
 	private List<Usuario> usuarioList;
 	
-	//@SuppressWarnings("restriction")
+	@SuppressWarnings("restriction")
 	@PostConstruct
 	public void init() {
 		usuarioList = usuarioService.buscarTodos();
@@ -51,6 +51,8 @@ public class UsuarioBean {
 	
 	public void excluir() {
 		usuarioService.excluir(usuario);
+		// Nova instância para limpar formulário
+		usuario = new Usuario();
 		// Atualiza lista
 		usuarioList = usuarioService.buscarTodos();
 	}
@@ -58,23 +60,18 @@ public class UsuarioBean {
 	public Usuario getUsuario() {
 		return usuario;
 	}
-
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
-	}
-	
+	}	
 	public UsuarioService getUsuarioService() {
 		return usuarioService;
 	}
-
 	public void setUsuarioService(UsuarioService usuarioService) {
 		this.usuarioService = usuarioService;
-	}
-	
+	}	
 	public List<Usuario> getUsuarioList() {
 		return usuarioList;
 	}
-
 	public void setUsuarioList(List<Usuario> usuarioList) {
 		this.usuarioList = usuarioList;
 	}
